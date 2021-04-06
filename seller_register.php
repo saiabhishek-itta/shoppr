@@ -13,11 +13,6 @@ $sell_mobileno1=$_POST['sell_mobileno1'];
 $sell_mobileno2=$_POST['sell_mobileno2'];
 $sell_landline=$_POST['sell_landline'];
 
-
-
-
-
-
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
