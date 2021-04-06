@@ -22,7 +22,7 @@ $sql = "INSERT INTO customerdata (cust_name,cust_mailid,cust_password,cust_addre
 VALUES ('$cust_name','$cust_mailid','$cust_password','$cust_address','$cust_mobileno')";
 
 if ($conn->query($sql) === TRUE) {
-  echo "<h1>You are Successfully Registered as a Customer</h1>";
+  echo "<h1>You are Successfully Registered as a Customer </h1>";
 } else {
   echo "Error: " . $sql . "<br>" . $conn->error;
 }
