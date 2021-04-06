@@ -16,10 +16,10 @@ $email = $_POST['email'];
 $password = $_POST['password']; 
 $accounttype = $_POST['accounttype'];
 if($accounttype == "seller") {
-    $sql = "SELECT * FROM sellerdata WHERE email = '$email' and password = '$password'";
+    $sql = "SELECT * FROM sellerdata WHERE sell_mailid = '$email' and sell_password = '$password'";
 }
 else {
-    $sql = "SELECT * FROM customerdata WHERE email = '$email' and password = '$password'";
+    $sql = "SELECT * FROM customerdata WHERE cust_mailid = '$email' and cust_password = '$password'";
 }
 $result = $conn->query($sql);
 
