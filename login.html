@@ -1,6 +1,25 @@
-<h1>THIS IS MY FIRST CODE</h1>
-<h2>THIS IS NITHIN</h2>
-<h1>ITTA SAI ABHISHEK</h1>
-
-<h1>THIS IS MY third CODE</h1>
-
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoppr-Login</title>
+</head>
+<body>
+    <h1 style="text-align: center;">Shoppr</h1>
+    <h2>Login</h2>
+    <form action="login.php" method="post">
+        <label for="email">Email: </label>
+        <input type="email" name="email" id="email" required><br>
+        <label for="password">Password: </label>
+        <input type="password" name="password" id="password" required><br>
+        <label for="accounttype">AccountType: </label>
+        <select name="accounttype" id="accounttype">
+            <option value="seller">Seller</option>
+            <option value="customer">Customer</option>
+        </select>
+        <br>
+    <input type="submit" value="Login">
+    </form>
+</body>
+</html>
