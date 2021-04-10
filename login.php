@@ -21,8 +21,11 @@ session_start();
 $email = $_POST['email'];
 $password = $_POST['password']; 
 $accounttype = $_POST['accounttype'];
+
+
+
+
 if($accounttype == "seller") {
-  
     $sql = "SELECT * FROM sellerdata WHERE sell_mailid = '$email' and sell_password = '$password'";
   $result = $conn->query($sql);
   if($result->num_rows > 0) {
@@ -30,12 +33,13 @@ if($accounttype == "seller") {
     $_SESSION['account_type'] = $accounttype;
     header("location: http://localhost/shoppr/seller_home.php");
 }
-else {
-    echo "Your email or password is invalid";
-}
+else  echo "Your email or password is invalid";
+
   
   
 }
+
+
 else {
   
     $sql = "SELECT * FROM customerdata WHERE cust_mailid = '$email' and cust_password = '$password'";
@@ -46,7 +50,7 @@ else {
     header("location: http://localhost/shoppr/customer_home.php");
                   }
   
-else {  echo "Your email or password is invalid";  }
+else echo "Your email or password is invalid";  
   
   
   
