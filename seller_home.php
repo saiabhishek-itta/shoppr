@@ -33,12 +33,20 @@ $email=$_SESSION['email'];
 
 
 
+
+
+
+
+
+
+
+
 $sql = "SELECT * FROM seller_shopdata WHERE sell_mailid = '$email' and review = '1'";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
         echo 
-        "<b>id: </b>" . $row['sell_shopid']. 
+        "<b>Shop ID: </b>" . $row['sell_shopid']. 
         "<br><b> Shop Name: </b>" . $row['sell_shopname']. 
         "<br><b>Shop Address: </b>" . $row['sell_shopaddress']. 
         "<br><b>Mobile: </b>".$row['sell_shopmobile'].
@@ -47,10 +55,17 @@ if ($result->num_rows > 0) {
   } else {
     echo "NO ACTIVE SHOPS FOUND";
   }
+  ?>
+<html>
+<form action="shop_manage.php" method="post">
+  <h3>Manage your shop</h3>
+        <label for="Shopid">Enter Shop ID: </label>
+        <input type="text" name="shopid" id="shopid" required>
+        <input type="submit" value="Submit">
+    </form>
+</html>
 
-
-
-
+  <?php
   echo"<h1>PENDING FOR REGISTRATION</h1>";
 
   
@@ -59,7 +74,7 @@ if ($result->num_rows > 0) {
   if ($result->num_rows > 0) {
       while($row = $result->fetch_assoc()) {
         echo 
-        "<b>id: </b>" . $row['sell_shopid']. 
+        "<b>Request ID: </b>" . $row['sell_shopid']. 
         "<br><b> Shop Name: </b>" . $row['sell_shopname']. 
         "<br><b>Shop Address: </b>" . $row['sell_shopaddress']. 
         "<br><b>Mobile: </b>".$row['sell_shopmobile'].
