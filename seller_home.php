@@ -30,17 +30,6 @@ echo"<h1>YOUR SHOPS</h1>";
 $email=$_SESSION['email'];
 
 
-
-
-
-
-
-
-
-
-
-
-
 $sql = "SELECT * FROM seller_shopdata WHERE sell_mailid = '$email' and review = '1'";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
